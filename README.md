@@ -10,7 +10,7 @@
 ## Functionality
 
 ## Files
- * bin/metrics-uptime
+ * bin/metrics-uptime.rb
 
 ## Usage
 
