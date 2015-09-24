@@ -14,6 +14,11 @@
 #
 # Released under the same terms as Sensu (the MIT license); see LICENSE
 # for details.
+#
+# NOTE:
+# This script is deprecated and will be probably remove in the future.
+# Please use metrics-uptime.rb instead. 
+
 
 import logging
 import logging.handlers
