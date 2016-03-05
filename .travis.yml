@@ -1,19 +1,33 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 install:
-  - bundle install
+- bundle install
 rvm:
-  - 1.9.3
-  - 2.0
-  - 2.1
-  - 2.2
+- 1.9.3
+- 2.0
+- 2.1
+- 2.2
 notifications:
   email:
     recipients:
-      - sensu-plugin@sensu-plugins.io
+    - sensu-plugin@sensu-plugins.io
     on_success: change
     on_failure: always
-
 script:
-  - 'bundle exec rake default'
+- bundle exec rake default
+- gem build sensu-plugins-uptime-checks.gemspec
+- gem install sensu-plugins-uptime-checks-*.gem
+deploy:
+  provider: rubygems
+  api_key:
+    secure: Ea6nvAMqBhuWhlOkxgvY9M/ZI241wfa65pviBlQbt0dUC8j8SggsJ7hgdM4qE6c5pxhAOezuazAN/Qoh8zo7hpM5wqfzaq5+4WUuj48+y+8EGWI1x8u8DwKqnk2IU1uPST0uuG33yEFpHaaPU1NJyi/OxQ7pKA0jFjC+MyjojFc=
+  gem: sensu-plugins-uptime-checks
+  on:
+    ags: true
+    all_branches: true
+    rvm: 1.9.3
+    rvm: 2.0
+    rvm: 2.1
+    rvm: 2.2
+    repo: sensu-plugins/sensu-plugins-uptime-checks
