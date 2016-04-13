@@ -24,7 +24,7 @@ deploy:
     secure: Ea6nvAMqBhuWhlOkxgvY9M/ZI241wfa65pviBlQbt0dUC8j8SggsJ7hgdM4qE6c5pxhAOezuazAN/Qoh8zo7hpM5wqfzaq5+4WUuj48+y+8EGWI1x8u8DwKqnk2IU1uPST0uuG33yEFpHaaPU1NJyi/OxQ7pKA0jFjC+MyjojFc=
   gem: sensu-plugins-uptime-checks
   on:
-    ags: true
+    tags: true
     all_branches: true
     rvm: 1.9.3
     rvm: 2.0
