@@ -3,7 +3,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
-## Unreleased]
+## [Unreleased]
+### Changed
+- Loosen dependency on sensu-plugin from `= 1.2.0` to `~> 1.2`
+- Update Rubocop to 0.40, apply auto-correct
+
+### Removed
+- Remove Ruby 1.9.3 support; add Ruby 2.3.0 support to test matrix
 
 ## [0.0.4] - 2015-12-14
 ### Changed
