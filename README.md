@@ -9,7 +9,7 @@
 ## Functionality
 
 ## Files
- * bin/check-uptime.rb.rb
+ * bin/check-uptime.rb
  * bin/metrics-uptime.rb
 
 ## Usage
