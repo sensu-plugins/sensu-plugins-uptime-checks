@@ -1,4 +1,4 @@
-#! /usr/bin/env ruby
+#!/opt/sensu/embedded/bin/ruby
 #  encoding: UTF-8
 #
 #   check-uptime
@@ -18,20 +18,21 @@
 #   check-uptime.rb --help
 #
 # NOTES:
-#   Checks the uptime of the system and warns the user if the system
-#   has been crashed or rebooted.
+#   Checks the systems uptime and warns if the system has been rebooted. 
 #
 # LICENSE:
 #   Copyright 2012 Kees Remmelzwaal <kees@fastmail.com>
 #   Released under the same terms as Sensu (the MIT license); see LICENSE
 #   for details.
 #
+
 require 'sensu-plugin/check/cli'
 
 class CheckUptime < Sensu::Plugin::Check::CLI
 
   option :warn,
-         short: '-w WARN',
+         short: '-w SEC ',
+         description: 'Warn if uptime is below SEC',
          proc: proc(&:to_i),
          default: 180 
 
