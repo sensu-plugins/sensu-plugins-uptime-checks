@@ -9,6 +9,7 @@
 ## Functionality
 
 ## Files
+ * bin/check-uptime.rb
  * bin/metrics-uptime.rb
 
 ## Usage
@@ -18,3 +19,4 @@
 [Installation and Setup](http://sensu-plugins.io/docs/installation_instructions.html)
 
 ## Notes
+
