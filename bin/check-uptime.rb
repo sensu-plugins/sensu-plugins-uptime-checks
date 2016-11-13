@@ -18,7 +18,7 @@
 #   check-uptime.rb --help
 #
 # NOTES:
-#   Checks the systems uptime and warns if the system has been rebooted. 
+#   Checks the systems uptime and warns if the system has been rebooted.
 #
 # LICENSE:
 #   Copyright 2012 Kees Remmelzwaal <kees@fastmail.com>
@@ -29,15 +29,13 @@
 require 'sensu-plugin/check/cli'
 
 class CheckUptime < Sensu::Plugin::Check::CLI
-
   option :warn,
          short: '-w SEC ',
          description: 'Warn if uptime is below SEC',
          proc: proc(&:to_i),
-         default: 180 
+         default: 180
 
   def run
-
     uptime_sec  = IO.read('/proc/uptime').split[0].to_i
     uptime_date = Time.now - uptime_sec
 
@@ -50,6 +48,3 @@ class CheckUptime < Sensu::Plugin::Check::CLI
     ok
   end
 end
-
-
-
