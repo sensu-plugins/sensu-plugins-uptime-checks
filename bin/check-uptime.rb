@@ -34,10 +34,21 @@ class CheckUptime < Sensu::Plugin::Check::CLI
          description: 'Warn if uptime is below SEC',
          proc: proc(&:to_i),
          default: 180
+  option :crit,
+         short: '-c SEC ',
+         description: 'Critical if uptime is below SEC',
+         proc: proc(&:to_i),
+         default: 180
+
 
   def run
     uptime_sec  = IO.read('/proc/uptime').split[0].to_i
     uptime_date = Time.now - uptime_sec
+
+    if uptime_sec < config[:crit]
+      message "System boot detected (#{uptime_sec} seconds up)"
+      critical
+    end
 
     if uptime_sec < config[:warn]
       message "System boot detected (#{uptime_sec} seconds up)"
