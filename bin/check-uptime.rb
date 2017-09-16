@@ -19,6 +19,7 @@
 #
 # NOTES:
 #   Checks the systems uptime and warns if the system has been rebooted.
+#   2017 Juan Moreno Martinez - Add reverse option
 #
 # LICENSE:
 #   Copyright 2012 Kees Remmelzwaal <kees@fastmail.com>
@@ -35,11 +36,18 @@ class CheckUptime < Sensu::Plugin::Check::CLI
          proc: proc(&:to_i),
          default: 180
 
+  option :reverse,
+         short: '-r',
+         long: '--reverse',
+         description: 'Reverse, Warn if uptime is upper SEC',
+         boolean: true,
+         default: false
+
   def run
     uptime_sec  = IO.read('/proc/uptime').split[0].to_i
     uptime_date = Time.now - uptime_sec
 
-    if uptime_sec < config[:warn]
+    if uptime_sec < config[:warn] || (uptime_sec > config[:warn] && config[:reverse])
       message "System boot detected (#{uptime_sec} seconds up)"
       warning
     end
