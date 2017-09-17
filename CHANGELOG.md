@@ -4,8 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
+
 ### Added
-- Ruby 2.4 testing
+- Ruby 2.4 testing (@Evesy)
+- check-uptime.rb: added `--greater-than` option to change the comparison operator to determine if threshold is exceeded (@Juan-Moreno)
 
 ## [1.1.0] - 2016-11-13
 ### Added
