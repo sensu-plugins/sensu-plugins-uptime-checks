@@ -1,9 +1,12 @@
-#Change Log
+# Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
+This Changelog following the conventions laid out [here](https://github.com/sensu-plugins/community/blob/master/HOW_WE_CHANGELOG.md)
 
 ## [Unreleased]
+
+### Changed
+- updated PR template and CHANGELOG to point to new CHANGELOG guidelines (@majormoses)
 
 ### Added
 - Ruby 2.4 testing (@Evesy)
