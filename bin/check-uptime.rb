@@ -32,14 +32,14 @@ require 'sensu-plugin/check/cli'
 class CheckUptime < Sensu::Plugin::Check::CLI
   option :warn,
          short: '-w SEC ',
-         description: 'Warn if uptime is below SEC',
+         description: 'Warn threshold in SEC',
          proc: proc(&:to_i),
          default: 180
 
-  option :reverse,
-         short: '-r',
-         long: '--reverse',
-         description: 'Reverse, Warn if uptime is upper SEC',
+  option :greater,
+         short: '-g',
+         long: '--greater-than',
+         description: 'This compare uptime > threshold. Default behavior uptime < threshold',
          boolean: true,
          default: false
 
@@ -47,8 +47,11 @@ class CheckUptime < Sensu::Plugin::Check::CLI
     uptime_sec  = IO.read('/proc/uptime').split[0].to_i
     uptime_date = Time.now - uptime_sec
 
-    if uptime_sec < config[:warn] || (uptime_sec > config[:warn] && config[:reverse])
-      message "System boot detected (#{uptime_sec} seconds up)"
+    if config[:greater] && uptime_sec > config[:warn]
+      message "System boot detected (#{uptime_sec} seconds up), compared using '>'"
+      warning
+    elsif uptime_sec < config[:warn] && !config[:greater]
+      message "System boot detected (#{uptime_sec} seconds up), compared using '<'"
       warning
     end
 
