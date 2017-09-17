@@ -19,6 +19,7 @@
 #
 # NOTES:
 #   Checks the systems uptime and warns if the system has been rebooted.
+#   2017 Juan Moreno Martinez - Add reverse option
 #
 # LICENSE:
 #   Copyright 2012 Kees Remmelzwaal <kees@fastmail.com>
@@ -31,16 +32,26 @@ require 'sensu-plugin/check/cli'
 class CheckUptime < Sensu::Plugin::Check::CLI
   option :warn,
          short: '-w SEC ',
-         description: 'Warn if uptime is below SEC',
+         description: 'Warn threshold in SEC',
          proc: proc(&:to_i),
          default: 180
+
+  option :greater,
+         short: '-g',
+         long: '--greater-than',
+         description: 'This compare uptime > threshold. Default behavior uptime < threshold',
+         boolean: true,
+         default: false
 
   def run
     uptime_sec  = IO.read('/proc/uptime').split[0].to_i
     uptime_date = Time.now - uptime_sec
 
-    if uptime_sec < config[:warn]
-      message "System boot detected (#{uptime_sec} seconds up)"
+    if config[:greater] && uptime_sec > config[:warn]
+      message "System boot detected (#{uptime_sec} seconds up), compared using '>'"
+      warning
+    elsif uptime_sec < config[:warn] && !config[:greater]
+      message "System boot detected (#{uptime_sec} seconds up), compared using '<'"
       warning
     end
 
