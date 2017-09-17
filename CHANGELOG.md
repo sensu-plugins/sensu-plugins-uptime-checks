@@ -5,6 +5,7 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 
 ## [Unreleased]
 
+## [1.2.0] - 2017-09-17
 ### Changed
 - updated PR template and CHANGELOG to point to new CHANGELOG guidelines (@majormoses)
 
@@ -43,7 +44,8 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 ### Added
 - initial release
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/0.0.4...1.0.0
 [0.0.4]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/0.0.3...0.0.4
