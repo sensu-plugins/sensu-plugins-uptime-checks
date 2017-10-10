@@ -20,6 +20,7 @@
 # NOTES:
 #   Checks the systems uptime and warns if the system has been rebooted.
 #   2017 Juan Moreno Martinez - Add reverse option
+#   2017 Jeronimo Jose Diaz Garcia - Compatibility OS X
 #
 # LICENSE:
 #   Copyright 2012 Kees Remmelzwaal <kees@fastmail.com>
@@ -44,7 +45,13 @@ class CheckUptime < Sensu::Plugin::Check::CLI
          default: false
 
   def run
-    uptime_sec  = IO.read('/proc/uptime').split[0].to_i
+    os = `uname`
+    if os.chomp == "Darwin"
+      uptime_timestamp =  %x(sysctl kern.boottime | cut -d= -f2 | cut -d" " -f2 | cut -d, -f1).to_i
+      uptime_sec = %x(date +%s).to_i - uptime_timestamp
+    else
+      uptime_sec  = IO.read('/proc/uptime').split[0].to_i
+    end
     uptime_date = Time.now - uptime_sec
 
     if config[:greater] && uptime_sec > config[:warn]
