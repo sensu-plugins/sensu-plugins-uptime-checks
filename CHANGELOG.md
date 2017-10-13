@@ -5,6 +5,9 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 
 ## [Unreleased]
 
+### Added
+- check-uptime.rbheck-uptime.rb: added osx support (@jjdiazgarcia)
+
 ## [1.2.0] - 2017-09-17
 ### Changed
 - updated PR template and CHANGELOG to point to new CHANGELOG guidelines (@majormoses)
