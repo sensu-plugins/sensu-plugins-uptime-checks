@@ -5,6 +5,9 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 
 ## [Unreleased]
 
+### Breaking Changes
+- removed ruby 2.0 support && testing (@majormoses)
+
 ### Added
 - check-uptime.rbheck-uptime.rb: added osx support (@jjdiazgarcia)
 
