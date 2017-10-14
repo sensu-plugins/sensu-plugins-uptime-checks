@@ -46,11 +46,11 @@ class CheckUptime < Sensu::Plugin::Check::CLI
 
   def run
     os = `uname`
-    if os.chomp == "Darwin"
-      uptime_timestamp =  %x(sysctl kern.boottime | cut -d= -f2 | cut -d" " -f2 | cut -d, -f1).to_i
-      uptime_sec = %x(date +%s).to_i - uptime_timestamp
+    if os.chomp == 'Darwin'
+      uptime_timestamp = `sysctl kern.boottime | cut -d= -f2 | cut -d" " -f2 | cut -d, -f1`.to_i
+      uptime_sec = `date +%s`.to_i - uptime_timestamp
     else
-      uptime_sec  = IO.read('/proc/uptime').split[0].to_i
+      uptime_sec = IO.read('/proc/uptime').split[0].to_i
     end
     uptime_date = Time.now - uptime_sec
 
