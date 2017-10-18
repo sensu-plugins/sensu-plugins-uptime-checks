@@ -49,8 +49,10 @@ class CheckUptime < Sensu::Plugin::Check::CLI
     if os.chomp == 'Darwin'
       uptime_timestamp = `sysctl kern.boottime | cut -d= -f2 | cut -d" " -f2 | cut -d, -f1`.to_i
       uptime_sec = `date +%s`.to_i - uptime_timestamp
-    else
+    elsif os.chomp == 'Linux'
       uptime_sec = IO.read('/proc/uptime').split[0].to_i
+    else
+      message "platform: #{os} is not supported, please open an issue with the output of '`uname`'."
     end
     uptime_date = Time.now - uptime_sec
 
