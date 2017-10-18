@@ -9,7 +9,8 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 - removed ruby 2.0 support && testing (@majormoses)
 
 ### Added
-- check-uptime.rbheck-uptime.rb: added osx support (@jjdiazgarcia)
+- check-uptime.rb: added osx support (@jjdiazgarcia)
+- check-uptime.rb: minor enhancements for performance and emit an `unknown` for unsupported os rather than a message and it failing with an undefined variable (@majormoses)
 
 ## [1.2.0] - 2017-09-17
 ### Changed
