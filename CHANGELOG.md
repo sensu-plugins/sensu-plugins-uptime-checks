@@ -5,6 +5,7 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 
 ## [Unreleased]
 
+## [2.0.0] - 2017-10-18
 ### Breaking Changes
 - removed ruby 2.0 support && testing (@majormoses)
 
@@ -51,7 +52,8 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 ### Added
 - initial release
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.2.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.2.0...2.0.0
 [1.2.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/0.0.4...1.0.0
