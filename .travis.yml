@@ -18,8 +18,10 @@ script:
 - bundle exec rake default
 - gem build sensu-plugins-uptime-checks.gemspec
 - gem install sensu-plugins-uptime-checks-*.gem
+before_deploy:
+- bash -c "[ ! -d bonsai/ ] && git clone https://github.com/sensu/sensu-go-bonsai-asset.git bonsai || echo 'bonsai/ exists, skipping git clone'"
 deploy:
-  provider: rubygems
+- provider: rubygems
   api_key:
     secure: Ea6nvAMqBhuWhlOkxgvY9M/ZI241wfa65pviBlQbt0dUC8j8SggsJ7hgdM4qE6c5pxhAOezuazAN/Qoh8zo7hpM5wqfzaq5+4WUuj48+y+8EGWI1x8u8DwKqnk2IU1uPST0uuG33yEFpHaaPU1NJyi/OxQ7pKA0jFjC+MyjojFc=
   gem: sensu-plugins-uptime-checks
@@ -31,3 +33,10 @@ deploy:
     rvm: 2.3.0
     rvm: 2.4.1
     repo: sensu-plugins/sensu-plugins-uptime-checks
+- provider: script
+  script: bonsai/ruby-runtime/travis-build-ruby-plugin-assets.sh sensu-plugins-uptime-checks
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+    rvm: 2.4.1
