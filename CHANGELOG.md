@@ -9,6 +9,7 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 ### Changed
 - Updated bundler development depedency to '~> 2.1'
 - Updated README to conform with standardization guidelines (sensu-plugins/community#134)
+- Removed centos asset definition
 
 ## [3.1.0] - 2019-12-09
 ### Added
