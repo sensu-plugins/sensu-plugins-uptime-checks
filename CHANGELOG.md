@@ -5,6 +5,20 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 
 ## [Unreleased]
 
+### Changed
+- Updated rubocop dependency to '~> 0.79.0'
+- Remediated issues from rubocop upgrade
+
+## [3.1.0] - 2019-12-19
+### Changed
+- Updated bundler development depedency to '~> 2.1'
+- Updated README to conform with standardization guidelines (sensu-plugins/community#134)
+- Removed centos asset definition
+
+## [3.1.0] - 2019-12-09
+### Added
+- Updated asset build targets 
+
 ## [3.0.0] - 2019-06-28
 ### Breaking Changes
 - Bump `sensu-plugin` dependency from `~> 1.2` to `~> 4.0` you can read the changelog entries for [4.0](https://github.com/sensu-plugins/sensu-plugin/blob/master/CHANGELOG.md#400---2018-02-17), [3.0](https://github.com/sensu-plugins/sensu-plugin/blob/master/CHANGELOG.md#300---2018-12-04), and [2.0](https://github.com/sensu-plugins/sensu-plugin/blob/master/CHANGELOG.md#v200---2017-03-29)
@@ -60,7 +74,9 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 ### Added
 - initial release
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/3.0.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/3.2.0...HEAD
+[3.2.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/3.1.0...3.2.0
+[3.1.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/3.0.0...3.1.0
 [3.0.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/2.0.0...3.0.0
 [2.0.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.2.0...2.0.0
 [1.2.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.1.0...1.2.0
