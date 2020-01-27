@@ -9,6 +9,12 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 - Updated rubocop dependency to '~> 0.79.0'
 - Remediated issues from rubocop upgrade
 
+## [3.1.0] - 2019-12-19
+### Changed
+- Updated bundler development depedency to '~> 2.1'
+- Updated README to conform with standardization guidelines (sensu-plugins/community#134)
+- Removed centos asset definition
+
 ## [3.1.0] - 2019-12-09
 ### Added
 - Updated asset build targets 
@@ -68,7 +74,8 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 ### Added
 - initial release
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/3.1.0...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/3.2.0...HEAD
+[3.2.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/3.1.0...3.2.0
 [3.1.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/3.0.0...3.1.0
 [3.0.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/2.0.0...3.0.0
 [2.0.0]: https://github.com/sensu-plugins/sensu-plugins-uptime-checks/compare/1.2.0...2.0.0
