@@ -8,6 +8,7 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 ### Changed
 - Updated rubocop dependency to '~> 0.79.0'
 - Remediated issues from rubocop upgrade
+- Updated rake dependency to '~> 13.0'
 
 ## [3.1.0] - 2019-12-19
 ### Changed
