@@ -5,6 +5,10 @@ This Changelog following the conventions laid out [here](https://github.com/sens
 
 ## [Unreleased]
 
+### Changed
+- Updated rubocop dependency to '~> 0.79.0'
+- Remediated issues from rubocop upgrade
+
 ## [3.1.0] - 2019-12-09
 ### Added
 - Updated asset build targets 
