@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SensuPluginsUptimeChecks
   module Version
     MAJOR = 3

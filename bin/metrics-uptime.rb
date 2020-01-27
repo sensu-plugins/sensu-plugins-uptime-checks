@@ -1,5 +1,6 @@
 #! /usr/bin/env ruby
-#  encoding: UTF-8
+# frozen_string_literal: true
+
 #
 #   metrics-uptime
 #
@@ -40,7 +41,7 @@ class Uptime < Sensu::Plugin::Metric::CLI::Graphite
   # Main function
   def run
     lines = File.readlines('/proc/uptime', 'r')
-    metrics = %w(uptime idletime)
+    metrics = %w[uptime idletime]
     stats = lines[0].strip.split(/\s+/)
 
     metrics.size.times { |i| output "#{config[:scheme]}.#{metrics[i]}", stats[i] }
